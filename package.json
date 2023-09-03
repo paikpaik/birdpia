@@ -1,0 +1,19 @@
+{
+  "name": "birdpia",
+  "version": "0.0.1",
+  "description": "birdpia SNS service using express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paikpaik/birdpia.git"
+  },
+  "author": "paikpaik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paikpaik/birdpia/issues"
+  },
+  "homepage": "https://github.com/paikpaik/birdpia#readme"
+}
