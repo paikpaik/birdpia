@@ -47,8 +47,8 @@ app.use(
     },
   })
 );
-app.use(passport.initialize()); // req.user, req.login, req.isAuthenticate, req.logout
-app.use(passport.session()); // connect.sid라는 이름으로 세션 쿠키가 브라우저로 전송
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/", pageRouter);
 app.use("/auth", authRouter);

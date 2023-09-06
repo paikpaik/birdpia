@@ -15,7 +15,7 @@ exports.join = async (req, res, next) => {
       nick,
       password: hash,
     });
-    return res.redirect("/"); // status(302)
+    return res.redirect("/");
   } catch (error) {
     console.error(error);
     next(error);
@@ -25,16 +25,13 @@ exports.join = async (req, res, next) => {
 exports.login = (req, res, next) => {
   passport.authenticate("local", (authError, user, info) => {
     if (authError) {
-      // 서버실패
       console.error(authError);
       return next(authError);
     }
     if (!user) {
-      // 로직실패
       return res.redirect(`/?loginError=${info.message}`);
     }
     return req.login(user, (loginError) => {
-      // 로그인 성공
       if (loginError) {
         console.error(loginError);
         return next(loginError);
