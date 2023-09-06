@@ -46,7 +46,7 @@ app.use(
     },
   })
 );
-app.use(passport.initialize()); // passport는 반드시 session 바로 아래에
+app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", pageRouter);
