@@ -10,6 +10,7 @@ const { sequelize } = require("./models");
 dotenv.config();
 
 const pageRouter = require("./routes/page");
+const authRouter = require("./routes/auth");
 const passportConfig = require("./passport");
 
 const app = express();
@@ -46,10 +47,12 @@ app.use(
     },
   })
 );
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize()); // req.user, req.login, req.isAuthenticate, req.logout
+app.use(passport.session()); // connect.id라는 이름으로 세션 쿠키가 브라우저로 전송
 
 app.use("/", pageRouter);
+app.use("/auth", authRouter);
+
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
   error.status = 404;
