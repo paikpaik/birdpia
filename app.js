@@ -5,12 +5,15 @@ const path = require("path");
 const session = require("express-session");
 const nunjucks = require("nunjucks");
 const dotenv = require("dotenv");
+const passport = require("passport");
 const { sequelize } = require("./models");
 dotenv.config();
 
 const pageRouter = require("./routes/page");
+const passportConfig = require("./passport");
 
 const app = express();
+passportConfig();
 app.set("port", process.env.PORT || 3001);
 app.set("view engine", "html");
 nunjucks.configure("views", {
@@ -43,6 +46,8 @@ app.use(
     },
   })
 );
+app.use(passport.initialize()); // passport는 반드시 session 바로 아래에
+app.use(passport.session());
 
 app.use("/", pageRouter);
 app.use((req, res, next) => {
