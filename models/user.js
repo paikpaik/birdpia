@@ -17,7 +17,7 @@ class User extends Sequelize.Model {
           type: Sequelize.STRING(100),
           allowNull: true,
         },
-        provicer: {
+        provider: {
           type: Sequelize.ENUM("local", "kakao"),
           allowNull: false,
           defaultValue: "local",
