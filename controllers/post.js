@@ -2,7 +2,7 @@ const Post = require("../models/post");
 const Hashtag = require("../models/hashtag");
 
 exports.afterUploadImage = (req, res) => {
-  res.json({ url: `/img/${req.file.filename}` });
+  res.json({ url: `/img/${encodeURIComponent(req.file.filename)}` });
 };
 
 exports.uploadPost = async (req, res, next) => {
