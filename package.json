@@ -2,9 +2,9 @@
   "name": "birdpia",
   "version": "0.0.1",
   "description": "birdpia SNS service using express",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon server.js",
     "test": "jest",
     "coverage": "jest --coverage"
   },
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "jest": "^29.6.4",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
   }
 }
