@@ -1,0 +1,35 @@
+{
+  "config": {
+    "target": "http://localhost:3000",
+    "http": {
+      "timeout": 30
+    },
+    "phases": [
+      {
+        "duration": 30,
+        "arrivalRate": 20
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "flow": [
+        {
+          "get": { "url": "/" }
+        },
+        {
+          "poss": {
+            "url": "/auth/login",
+            "json": { "email": "test@test.com", "password": "123456" },
+            "followRedirect": false
+          }
+        },
+        {
+          "get": {
+            "url": "/hashtag?hashtag=birdpia"
+          }
+        }
+      ]
+    }
+  ]
+}
