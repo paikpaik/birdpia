@@ -9,3 +9,13 @@ exports.follow = async (userId, followingId) => {
     return "no user";
   }
 };
+
+exports.unfollow = async (userId, followingId) => {
+  const user = await User.findOne({ where: { id: userId } });
+  if (user) {
+    await user.removeFollowing(parseInt(followingId, 10));
+    return "ok";
+  } else {
+    return "no followingUser";
+  }
+};
