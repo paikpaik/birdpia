@@ -175,6 +175,9 @@ textarea {
 #search-form {
   text-align: right;
 }
+#nick-form {
+  text-align: right;
+}
 #join-form {
   padding: 10px;
   text-align: center;

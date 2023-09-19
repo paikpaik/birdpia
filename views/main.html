@@ -34,6 +34,10 @@
       <input type="text" name="hashtag" placeholder="태그 검색" />
       <button class="btn">검색</button>
     </form>
+    <form id="nick-form" action="/nick">
+      <input type="text" name="nick" placeholder="사용자 검색" />
+      <button class="btn">검색</button>
+    </form>
     {% for twit in twits %}
     <div class="twit">
       <input type="hidden" value="{{twit.User.id}}" class="twit-user-id" />
